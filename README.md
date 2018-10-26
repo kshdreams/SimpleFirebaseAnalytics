@@ -21,7 +21,7 @@ dependencies {
 ```
 
 
-###### USAGE
+##### USAGE
 call SimpleFirebaseAnalytics.init() method on your Application.onCreate() method
 ```Java
 public class YourApplication extends Application {
@@ -50,6 +50,7 @@ public class YourApplication extends Application {
 ```
 
 just define @FirebaseScreen annotation to Activity, Fragment class instead of call FirebaseAnalytics.setCurrentScreen()
+then automatically call screen event when Activity, Fragment is created or resume.
 
 ```Java
 @FirebaseScreen("main_screen")
@@ -79,3 +80,6 @@ and send firebase event using object.
     SimpleFirebaseAnalytics.sendEvent(ClickEvent.create("snackbar", "some extra here"));
 ```
 
+
+#### Limitation
+- use AppCompatActivity to use Fragment screen logging (FragmentLifeCycle observing supported since API level 26)
