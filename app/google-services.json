@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "project_number_here",
+    "firebase_url": "firebase_url_here",
+    "project_id": "project_id_here",
+    "storage_bucket": "bucket_here"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:355064230851:android:5fa13576be74a5e1",
+        "android_client_info": {
+          "package_name": "com.android.sebiya.firebase.ui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "your_client_id_here",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "your_key_here"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
