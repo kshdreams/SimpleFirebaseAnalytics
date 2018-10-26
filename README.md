@@ -81,5 +81,17 @@ and send firebase event using object.
 ```
 
 
+```Java
+    public static class User {
+        @FirebaseParam("userId")
+        String id;
+        @FirebaseParam("userName")
+        String name;
+    }
+
+    SimpleFirebaseAnalytics.sendEvent("create", user);
+```
+
+
 #### Limitation
 - use AppCompatActivity to use Fragment screen logging (FragmentLifeCycle observing supported since API level 26)

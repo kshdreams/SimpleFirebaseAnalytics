@@ -74,6 +74,8 @@ public class SimpleFirebaseAnalytics {
                     }
                 }
             });
+        } else {
+            Log.e(LOG_TAG, "init. already init called. so ignore this init method");
         }
     }
 
@@ -115,6 +117,25 @@ public class SimpleFirebaseAnalytics {
                     stringBuilder.append(param);
                     Log.d(str, stringBuilder.toString());
                 }
+            }
+        }
+    }
+
+    public static void sendEvent(String event, Object paramObj) {
+        if (!sAnalytics.isUserAgreed()) {
+            return;
+        }
+        Bundle param = FirebaseAnnotationParser.getParam(paramObj);
+        if (param != null) {
+            sAnalytics.logEvent(event, param);
+            if (ENABLE_DEBUG_LOG) {
+                String str = LOG_TAG;
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.append("sendEvent. event - ");
+                stringBuilder.append(event);
+                stringBuilder.append(", param - ");
+                stringBuilder.append(param);
+                Log.d(str, stringBuilder.toString());
             }
         }
     }
